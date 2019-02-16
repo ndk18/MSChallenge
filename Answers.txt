@@ -1,0 +1,69 @@
+Question 1
+----------------------------------------------------------------------------------------------------------------------
+
+SELECT Page_ID,Visit_Date,COUNT(1) AS Total_User_Sessions -- Get the Count by of User Sessions for each page and day
+FROM DDOME_UDA.DBO.TEMP1
+GROUP BY PAGE_ID,VISIT_DATE -- Grouping on Page & Date
+ORDER BY PAGE_ID -- To get the order as mentioned in the output of the question
+
+
+Question 2
+----------------------------------------------------------------------------------------------------------------------
+1. Which month has the highest sales? Is there any seasonality effect?
+A. November - Becuase of Thanks Giving Offers
+
+
+2. Which product is the recent best seller? - Hint: There is no `right` answer for this question, please feel free to make your own interpretation and give suggestion
+A.
+Last Year										 	- Easy-staple paper 	- 16
+Last Half Year ly								- Easy-staple paper - 10
+Last Quarter 									- Easy-staple paper
+Last Month						 				- 3M Hangers With Command Adhesive
+
+3. Is there any group of products which are often bought together? - Hint: You can define you own metric, however, please explain the rationale behind
+A.
+Most of the Furniture & Office products are brought together
+
+OSullivan 4-Shelf Bookcase in Odessa Pine & GBC Standard Recycled Report Covers, Clear Plastic Sheets
+DMI Eclipse Executive Suite Bookcases	& Avery 485
+SAFCO Optional Arm Kit for Workspace Cribbage Stacking Chair & Belkin Premiere Surge Master II 8-outlet surge protector
+Global Leather Highback Executive Chair with Pneumatic Height Adjustment, Black	& Zipper Ring Binder Pockets
+Hon Valutask Swivel Chairs	& GBC Plastic Binding Combs
+DAX Value U-Channel Document Frames, Easel Back &	Recycled Easel Ring Binders
+Eldon Wave Desk Accessories	& Poly Designer Cover & Back
+Eldon Expressions Wood and Plastic Desk Accessories, Cherry Wood &	GBC Prepunched Paper, 19-Hole, for Binding Systems, 24-lb
+
+4. Is there any other insight you can get to help to improve sales number? - Hint: It is okay to not having any significant insight, but you have to state the hypothesis and verify
+A.
+Insights:
+Divide Products into Segments - Technology(TEC), Office(OFF) & Furniture(FUR) and Geo by Countries (Canada, United States) to understand the numbers
+Office Products (Papers, Scissors, Pencils, Labels, Envelopes, etc) have less Sales and has never been in top position in any of the years (Technology have more sales in 2017,2016 and Furniture tops the list in 2015,2014)
+Sales are less in 2015 compared to all other years
+Sales are less in Q2 compared to all other quarters (Order of months NOT performing 4, 6, 5 in Q2)
+Wednesday's, Thursday's, Saturday's are having less Sales resp. compared to other weekdays
+
+Sales are more in Canada compared to US. Overall Technology Products have more Sales in both the countries
+
+Friday's, Monday's, Sunday's are having more Sales resp. compared to other weekdays
+
+5. Based on the data we have, what kind of BI dashboards you would build in order to help the sales team monitoring the performance?
+A.
+------------------
+Slicers (Filters)
+------------------
+Country
+Product Segment
+Product Sub Segment
+
+Monthly/Quarterly/Yearly
+--------------------
+KPIs
+--------------------
+Sales Amount
+YoY (Both Additive & Non Additive)
+QoQ (Both Additive & Non Additive)
+
+--------------------
+Dashboards
+--------------------
+Monthly/Quarterly/Yearly Trending Reports
